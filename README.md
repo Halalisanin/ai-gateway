@@ -1,3 +1,6 @@
+[![CI](https://github.com/Halalisanin/ai-gateway/actions/workflows/ci.yml/badge.svg)](https://github.com/Halalisanin/ai-gateway/actions/workflows/ci.yml)
+[![Docker](https://github.com/Halalisanin/ai-gateway/actions/workflows/docker.yml/badge.svg)](https://github.com/Halalisanin/ai-gateway/actions/workflows/docker.yml)
+
 cat > README.md << 'EOF'
 # 🚀 AI Gateway – Unified API for Multi‑Agent Systems
 
