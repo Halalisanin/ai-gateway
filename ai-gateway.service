@@ -1,0 +1,14 @@
+[Unit]
+Description=AI Gateway
+After=network.target
+
+[Service]
+User=liviyo
+WorkingDirectory=/home/liviyo/Documents/job/ai-gateway
+ExecStart=/usr/bin/python3 app.py
+Restart=always
+RestartSec=10
+EnvironmentFile=/home/liviyo/Documents/job/ai-gateway/.env
+
+[Install]
+WantedBy=multi-user.target

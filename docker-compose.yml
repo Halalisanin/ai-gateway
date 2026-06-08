@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  ai-gateway:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - SERPAPI_API_KEY=${SERPAPI_API_KEY}
+      - NEWSAPI_API_KEY=${NEWSAPI_API_KEY}
+      - HF_API_KEY_1=${HF_API_KEY_1}
+      - HF_API_KEY_2=${HF_API_KEY_2}
+      - HF_API_KEY_3=${HF_API_KEY_3}
+      - HF_API_KEY_4=${HF_API_KEY_4}
+      - HF_API_KEY_5=${HF_API_KEY_5}
+      - HF_API_KEY_6=${HF_API_KEY_6}
+      - HF_API_KEY_7=${HF_API_KEY_7}
+      - HF_API_KEY_8=${HF_API_KEY_8}
+      - HF_API_KEY_9=${HF_API_KEY_9}
+      - HF_API_KEY_10=${HF_API_KEY_10}
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
