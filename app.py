@@ -130,18 +130,18 @@ def get_weather(city):
         return f"Weather in {city}: {r.text.strip()}" if r.status_code == 200 else f"Weather unavailable for {city}"
     except Exception as e: return f"Weather error: {e}"
 
-def get_stock(ticker):
-    # Use a free API from Yahoo Finance (no yfinance)
-    try:
-        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
-        resp = requests.get(url, timeout=10)
-        if resp.status_code == 200:
-            data = resp.json()
-            meta = data['chart']['result'][0]['meta']
-            price = meta.get('regularMarketPrice', 'N/A')
-            previous_close = meta.get('previousClose', 1)
-            change = ((price - previous_close) / previous_close) * 100 if previous_close else 0
-            return f"{ticker.upper()}: ${price:.2f} ({change:+.2f}%)"
+# def get_stock(ticker):
+#     # Use a free API from Yahoo Finance (no yfinance)
+#     try:
+#         url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
+#         resp = requests.get(url, timeout=10)
+#         if resp.status_code == 200:
+#             data = resp.json()
+#             meta = data['chart']['result'][0]['meta']
+#             price = meta.get('regularMarketPrice', 'N/A')
+#             previous_close = meta.get('previousClose', 1)
+#             change = ((price - previous_close) / previous_close) * 100 if previous_close else 0
+#             return f"{ticker.upper()}: ${price:.2f} ({change:+.2f}%)"
         else:
             return f"Could not fetch stock {ticker}"
     except Exception as e:
@@ -184,7 +184,7 @@ def handle_tool(command):
     if not m: return None
     tool, arg = m.group(1).lower(), m.group(2).strip()
     if tool == 'weather': return get_weather(arg)
-    if tool == 'stock':   return get_stock(arg)
+# #     if tool == 'stock':   return get_stock(arg)
     if tool == 'news':    return get_news(arg)
     if tool == 'search':  return perform_search(arg)
     return f"Unknown tool: {tool}"
