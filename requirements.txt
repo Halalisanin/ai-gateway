@@ -4,3 +4,4 @@ serpapi
 yfinance==0.2.28
 beautifulsoup4
 newsapi-python
+pylint
