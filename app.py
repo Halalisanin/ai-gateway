@@ -184,7 +184,7 @@ def handle_tool(command):
     if not m: return None
     tool, arg = m.group(1).lower(), m.group(2).strip()
     if tool == 'weather': return get_weather(arg)
-# #     if tool == 'stock':   return get_stock(arg)
+# # # #     if tool == 'stock':   return get_stock(arg)
     if tool == 'news':    return get_news(arg)
     if tool == 'search':  return perform_search(arg)
     return f"Unknown tool: {tool}"
