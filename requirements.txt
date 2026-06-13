@@ -4,3 +4,6 @@ serpapi
 beautifulsoup4
 newsapi-python
 pylint
+pandas
+pyarrow
+lxml
